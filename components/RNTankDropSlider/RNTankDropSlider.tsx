@@ -56,6 +56,20 @@ function RNTankDropSlider(): React.JSX.Element {
               top: tankH2
             }]}
           />
+          <View 
+            style={[styles.sourceTop, {
+              top: tankH2 + 10,
+            }]}
+          >
+           <View 
+            style={[styles.sourceTopContent]}
+            />
+          </View>
+          <View 
+            style={[styles.source, {
+              height: 170 - tankH2,
+            }]}
+          />
           <View style={styles.sliderWrapper}>
             <Slider
               style={[styles.slider, {width: 200, height: 40}]}
@@ -97,7 +111,31 @@ const styles = StyleSheet.create({
     transform: [{translateY: -10}],
   },
   marker: {
-    position: 'absolute'
+    position: 'absolute',
+    zIndex: 10,
+  },
+  sourceTop: {
+    position: 'absolute',
+    top: 0,
+    left: 10,
+    overflow: 'hidden',
+    width: 186,
+    height: 20,
+  },
+  sourceTopContent: {
+    backgroundColor: '#87CEEB',
+    width: 800,
+    height: 800,
+    borderRadius: 800,
+    transform: [{translateX: -305}, {translateY: 7}],
+  },
+  source: {
+    position: 'absolute',
+    bottom: 10,
+    left: 10,
+    backgroundColor: '#87CEEB',
+    width: 186,
+    height: 0,
   },
   sliderWrapper: {
     position: 'absolute',
